@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "coursera/princeton_algorithms_part_i"
+		}
+	],
+	"settings": {
+		"java.project.referencedLibraries": [
+			"lib/**/*.jar",
+			"coursera/princeton_algorithms_part_i/classes/algs4.jar",
+			"classes/algs4.jar"
+		]
+	},
+}
