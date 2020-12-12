@@ -15,10 +15,10 @@
             "name": "Debug (Launch)-Java",
             "request": "launch",
             "cwd": "${workspaceFolder}",
-            "console": "internalConsole",
+            "console": "integratedTerminal",
             "stopOnEntry": false,
-            "mainClass": "${file}",
-            "args": "200 100"
+            "mainClass": "",
+            "args": ["<", "distinct.txt"]
         },
     ]
 }
