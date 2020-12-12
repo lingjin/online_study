@@ -18,7 +18,7 @@
             "console": "integratedTerminal",
             "stopOnEntry": false,
             "mainClass": "",
-            "args": ["<", "distinct.txt"]
+            "args": ["8", "<", "duplicates.txt"]
         },
     ]
 }

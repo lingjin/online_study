@@ -1,13 +1,21 @@
-import java.util.Scanner; 
+import edu.princeton.cs.algs4.StdIn;
+import edu.princeton.cs.algs4.StdOut;
 
 public class Permutation {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        while (scanner.hasNext()) {
-            System.out.println(scanner.next());
+        int N = Integer.parseInt(args[0]);
+        RandomizedQueue<String> randomized_queue = new RandomizedQueue<String>();
+
+        while (!StdIn.isEmpty()) {
+            String item = StdIn.readString();
+            if (item != null && item.length() > 0)
+                randomized_queue.enqueue(item);
         }
         
-        scanner.close(); // Not required for stdin but good practice
+        while(randomized_queue.size() > 0 && N > 0) {
+            StdOut.println(randomized_queue.dequeue());
+            N--;
+        }
 
     }
 }
