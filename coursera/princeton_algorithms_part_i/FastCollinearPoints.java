@@ -45,7 +45,7 @@ public class FastCollinearPoints {
                 }
             }
         }
-        lineSegments = list.toArray(new LineSegment[0]);
+        lineSegments = list.toArray(new LineSegment[list.size()]);
     }
 
     public int numberOfSegments() {
@@ -67,7 +67,7 @@ public class FastCollinearPoints {
             int y = in.readInt();
             points[i] = new Point(x, y);
         }
-    
+
         // draw the points
         StdDraw.enableDoubleBuffering();
         StdDraw.setXscale(0, 32768);
@@ -76,7 +76,7 @@ public class FastCollinearPoints {
             p.draw();
         }
         StdDraw.show();
-    
+
         // print and draw the line segments
         FastCollinearPoints collinear = new FastCollinearPoints(points);
         for (LineSegment segment : collinear.segments()) {

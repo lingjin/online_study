@@ -9,9 +9,6 @@
  ******************************************************************************/
 
 import java.util.Comparator;
-
-import javax.lang.model.util.ElementScanner6;
-
 import edu.princeton.cs.algs4.StdDraw;
 
 public class Point implements Comparable<Point> {
@@ -47,6 +44,8 @@ public class Point implements Comparable<Point> {
      */
     public void drawTo(Point that) {
         /* DO NOT MODIFY */
+        if (that == null)
+            throw new NullPointerException("null pointer");
         StdDraw.line(this.x, this.y, that.x, that.y);
     }
 
@@ -63,18 +62,19 @@ public class Point implements Comparable<Point> {
      */
     public double slopeTo(Point that) {
         /* YOUR CODE HERE */
-        double ret;
+        if (that == null)
+            throw new NullPointerException("null pointer");
 
-        if(compareTo(that) == 0)
-            ret = Double.NEGATIVE_INFINITY;
-        else if (this.x == that.x)
-            ret = Double.POSITIVE_INFINITY;
-        else if (this.y == that.y)
-            ret = +0.0;
-        else 
-            ret = (this.y - that.y) / (this.x - that.x);
+        if (this.x == that.x) {
+            return this.y == that.y ?
+                    Double.NEGATIVE_INFINITY : Double.POSITIVE_INFINITY;
+        }
+
+        if (this.y == that.y) {
+            return 0.0;
+        }
         
-        return ret;
+        return (this.y - that.y) * 1.0 / (this.x - that.x);
     }
 
     /**
@@ -91,22 +91,10 @@ public class Point implements Comparable<Point> {
      */
     public int compareTo(Point that) {
         /* YOUR CODE HERE */
-        int ret = 0;
+        if (that == null)
+            throw new NullPointerException("null pointer");
 
-        if (this.y < that.y)
-            ret = -1;
-        else if (this.y > that.y)
-            ret = 1;
-        else {
-            if (this.x < that.x)
-                ret = -1;
-            else if (this.x > that.y)
-                ret = 1;
-            else
-                ret = 0;
-        }
-
-        return ret;
+        return this.y == that.y ? this.x - that.x : this.y - that.y;
     }
 
     /**

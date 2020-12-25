@@ -53,7 +53,7 @@ public class BruteCollinearPoints {
             }
         }
         
-        lineSegments = list.toArray(new LineSegment[0]);
+        lineSegments = list.toArray(new LineSegment[list.size()]);
     }
 
     public int numberOfSegments() {
